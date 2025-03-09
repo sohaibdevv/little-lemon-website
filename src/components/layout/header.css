@@ -11,7 +11,7 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #495e57;
+  /* background-color: #495e57; */
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
@@ -22,9 +22,9 @@
 }
 
 .nav-bar {
-  /* border-bottom: 2px solid #495e57; */
-  /* box-shadow: 0 0 10px rgba(0,0,0,.09); */
-  background-color: black;
+  box-shadow: 0 0 10px rgba(0,0,0,.09);
+  background-color: #fff;
+  justify-content: space-between;
   width: 100%;
   max-width: none;
   padding: 0 6%;
@@ -59,11 +59,11 @@
 }
 
 .nav-bar-links {
-  grid-column: 3;
+  grid-column: 2;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  column-gap: 1.5rem;
+  column-gap: 3rem;
   transition: left 300ms linear;
 }
 
@@ -101,7 +101,7 @@
 
   .nav-bar-links.expanded li {
     width: 100%;
-    border-bottom: 1px solid #495e57;
+    /* border-bottom: 1px solid #495e57; */
   }
 
   .nav-bar-links.expanded li a {

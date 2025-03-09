@@ -1,9 +1,10 @@
-## Meta Front-End Developer Capstone Project
+# Meta Front-End Developer Capstone Project
 
-# Little-Lemon 🍋
+# Little Lemon 🍋 🤠
 
-<p>
-Welcome to the Little Lemon Restaurant website repository. This project was created as a part of the Meta Frontend Developer course. It's built using React and offers a stylish interface for users who want to explore the restaurant's menu and make reservations.
-</p>
-<p>"Meta Front-End Developer Capstone Project | Redesigned Little-Lemon restaurant website"</p>
-# Demo: [Little Lemon](https://little-lemon-restaurant-wine.vercel.app//)
+## Live Demo
+
+## Description
+Welcome to the **Little Lemon Restaurant** website repository. This project was created as a part of my learning journey of **Meta Frontend Developer Professional Certificate Program.** This Project consist of all the the skills and knowledge that i have gained throw the Professional Certificate Program. It Offers a stylish User interface for users who want to explore the restaurant's menu and make reservations.
+
+## Technologies Used

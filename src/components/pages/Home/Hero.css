@@ -24,6 +24,7 @@
   font-size: 2.25rem;
   height: 2.25rem;
   line-height: 2.25rem;
+
 }
 
 .hero-information p {
@@ -40,6 +41,12 @@
 .hero-information .button-primary:hover,
 .hero-information .button-primary:focus {
   border-color: #f4ce14;
+}
+
+@media (max-width: 792px) {
+  .hero-information .button-primary{
+  text-align: center;
+}
 }
 
 .hero-image {

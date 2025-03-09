@@ -10,6 +10,12 @@
   -moz-box-sizing: border-box;
 }
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #495e57 #fff;
+
+}
+
 html {
   scroll-behavior: smooth;
 }
