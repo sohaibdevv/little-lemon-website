@@ -1,24 +1,14 @@
 .hover-underline-animation {
   display: inline-block;
-  position: relative;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: black;
+  border-radius: 25px;
 }
 
-.hover-underline-animation:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  /* background-color: #495e57; */
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-
-.hover-underline-animation:hover:after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
+.hover-underline-animation:hover {
+  background-color: #f4ce14;
+  /* background-color: #ebebeb; */
 }
 
 .nav-bar {
@@ -63,13 +53,13 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  column-gap: 3rem;
+  column-gap: 1.5rem;
   transition: left 300ms linear;
 }
 
 .nav-bar-links li {
   list-style-type: none;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .nav-bar-links a {
@@ -110,8 +100,9 @@
   }
 
   .nav-bar-links.expanded li:hover {
-    background-color: #ebebeb;
-  }
+  /* background-color: #ebebeb; */
+  background-color: #f4ce14;
+}
 
   .nav-bar-links {
     position: absolute;

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { HashLink } from "react-router-hash-link";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import logoImage from "./assets/logo.png";
+import logoImage from "../assets/logo.png";
 import "./header.css";
 import { Link } from "react-router-dom";
 

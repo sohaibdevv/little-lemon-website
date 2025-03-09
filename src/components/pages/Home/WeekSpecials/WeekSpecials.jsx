@@ -1,15 +1,15 @@
 import { HashLink } from "react-router-hash-link";
-import bruschettaImage from "./assets/bruschetta.jpg";
-import greekSaladImage from "./assets/greek-salad.jpg";
-import lemonDessertImage from "./assets/lemon-dessert.jpeg";
+import bruschettaImage from "../assets/bruschetta.jpg";
+import greekSaladImage from "../assets/greek-salad.jpg";
+import lemonDessertImage from "../assets/lemon-dessert.jpeg";
 import "./WeekSpecials.css";
-import MealCard from "./MealCard";
+import MealCard from "../MealCard/MealCard";
 
 const meals = [
   {
     name: "Greek Salad",
     image: greekSaladImage,
-    price: "$10.00",
+    price: "Rs. 850",
     description: `The famous greek salad of crispy lettuce, peppers, olives and
       our New York style feta cheese, garnished with crunchy garlic and rosemary
       croutons.`,
@@ -17,14 +17,14 @@ const meals = [
   {
     name: "Bruschetta",
     image: bruschettaImage,
-    price: "$6.79",
+    price: "Rs. 950",
     description: `Our Bruschetta is made from grilled bread that has been
       smeared with garlic and seasoned with salt and olive oil.`,
   },
   {
     name: "Lemon Dessert",
     image: lemonDessertImage,
-    price: "$8.50",
+    price: "Rs. 650",
     description: `This comes straight from grandma's recipe book, every last
       ingredient has been sourced and is as authentic as can be imagined.`,
   },
@@ -33,7 +33,7 @@ const meals = [
 const WeekSpecials = () => {
 
   const handleClick = () => {
-    const imageUrl = require("../../layout/assets/menu.webp");
+    const imageUrl = require("../../../layout/assets/menu.webp");
     window.open(imageUrl, "_blank", "noopener,noreferrer");
   };
 

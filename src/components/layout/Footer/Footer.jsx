@@ -12,11 +12,11 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { HashLink } from "react-router-hash-link";
 import "./footer.css";
-import logoWhiteImage from "./assets/logo-white.png";
+import logoWhiteImage from "../assets/logo-white.png";
 
 const contacts = [
-  { icon: faLocationDot, info: "123 Pretty Avenue, New York, NY 10009" },
-  { icon: faPhone, info: " (+1) 212/354-8844" },
+  { icon: faLocationDot, info: "DHA Phase 12, Karachi, Sindh 75200, Pakistan" },
+  { icon: faPhone, info: " +92 (21) 12345678" },
   { icon: faEnvelope, info: "info@littlelemon.com" },
 ];
 
@@ -26,6 +26,8 @@ const socials = [
   { icon: faTwitter, name: "twitter" },
   { icon: faYoutube, name: "youtube" },
 ];
+
+const currentYear = new Date().getFullYear();
 
 const Footer = ({ navLinks }) => {
   return (
@@ -67,6 +69,19 @@ const Footer = ({ navLinks }) => {
             <FontAwesomeIcon icon={social.icon} size="lg" />
           </a>
         ))}
+      <div className="site-footer-copyright">
+      <p className="copyright">
+      &copy; Copyright {currentYear}{' '}
+      <a
+        className="github-link"
+        target="_blank"
+        href="https://github.com/sohaibdevv"
+        >
+        Sohaibdevv
+      </a>
+      . Sharing is appreciated with attribution.
+    </p>
+      </div>
       </div>
     </footer>
   );
