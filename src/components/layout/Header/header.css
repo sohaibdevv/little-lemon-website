@@ -4,15 +4,23 @@
   text-decoration: none;
   color: black;
   border-radius: 25px;
+  background-color: transparent; /* Default background */
 }
 
 .hover-underline-animation:hover {
-  background-color: #f4ce14;
-  /* background-color: #ebebeb; */
+  background-color: #f4ce14; /* Hover color */
 }
 
+/* Override hover for active link */
+.hover-underline-animation.active,
+.hover-underline-animation.active:hover {
+  background-color: #f4ce14; /* Active color */
+}
+
+/* Rest of your CSS remains the same */
+
 .nav-bar {
-  box-shadow: 0 0 10px rgba(0,0,0,.09);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
   background-color: #fff;
   justify-content: space-between;
   width: 100%;
@@ -100,9 +108,9 @@
   }
 
   .nav-bar-links.expanded li:hover {
-  /* background-color: #ebebeb; */
-  background-color: #f4ce14;
-}
+    /* background-color: #ebebeb; */
+    background-color: #f4ce14;
+  }
 
   .nav-bar-links {
     position: absolute;
