@@ -1,5 +1,6 @@
 .reservations {
   min-height: calc(100vh - 6.25rem - 18rem);
+  background-image: url(../Home/assets/Form\ background\ img.jpg);
 }
 
 .reservations h2 {
