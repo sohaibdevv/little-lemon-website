@@ -1,8 +1,7 @@
 import {
   faFacebook,
-  faTwitter,
+  faLinkedin,
   faInstagram,
-  faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import {
   faEnvelope,
@@ -23,8 +22,7 @@ const contacts = [
 const socials = [
   { icon: faFacebook, name: "facebook" },
   { icon: faInstagram, name: "instagram" },
-  { icon: faTwitter, name: "twitter" },
-  { icon: faYoutube, name: "youtube" },
+  { icon: faLinkedin, name: "linkedin" },
 ];
 
 const currentYear = new Date().getFullYear();
