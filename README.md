@@ -4,7 +4,9 @@
 
 ## Live Demo: [Here!](https://little-lemon-sohaibdevv.netlify.app/)
 
-Welcome to the **Little Lemon Restaurant** website repository. This project was created as a part of my learning journey of **Meta Frontend Developer Professional Certificate Program.** This Project consist of all the the skills and knowledge that i have gained throw the Professional Certificate Program. It Offers a stylish User interface for users who want to explore the restaurant's menu and make reservations.
+Welcome to the **Little Lemon Restaurant website repository.** This project demonstrates the skills and knowledge acquired during the **Meta Frontend Developer Professional Certificate Program.**
+<br/>
+It Offers a stylish User interface for users who want to explore the restaurant's menu and make reservations.
 
 ## Features: 
   - Responsive design for all devices.
