@@ -57,6 +57,7 @@
   justify-self: end;
   border-radius: 1rem;
   object-fit: cover;
+  box-shadow: 0 0 15px #495e57;
 }
 
 @media (max-width: 792px) {

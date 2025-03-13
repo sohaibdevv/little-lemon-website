@@ -3,60 +3,60 @@ import { Formik } from "formik";
 import FormField from "./formField";
 import emailjs from '@emailjs/browser';
 
+// ReservationForm Component: Handles reservation form logic and submission.
 const ReservationForm = ({ availableTimes, dispatchOnDateChange, submitData }) => {
-  const minimumDate = new Date().toISOString().split("T")[0];
-  const minimumNumberOfGuests = 1;
-  const maximumNumberOfGuests = 10;
-  const occasions = ["Birthday", "Anniversary", "Engagement", "Other"];
 
+  // Configuration:  Setting up initial values and constraints
+  const today = new Date().toISOString().split("T")[0]; // Get today's date in YYYY-MM-DD format
+  const minGuests = 1;
+  const maxGuests = 10;
+  const occasionOptions = ["Birthday", "Anniversary", "Engagement", "Other"];
+
+  // Formik Setup:  Using Formik for form management (state, validation, submission)
   return (
     <Formik
-      initialValues={{
+      initialValues={{ // Initial form values
         name: "",
         mail: "",
-        date: minimumDate,
-        time: availableTimes[0],
-        numberOfGuests: minimumNumberOfGuests,
-        occasion: occasions[0],
+        date: today,
+        time: availableTimes[0], // First available time as default
+        numberOfGuests: minGuests,
+        occasion: occasionOptions[0], // First occasion as default
       }}
+
+      // Validation Function:  Validates form inputs.  Returns an object of errors.
       validate={(values) => {
         const errors = {};
-        if (!values.name) {
-          errors.name = "Please enter your name";
-        }
-        if (!values.mail) {
-          errors.mail = "Please enter an email";
-        } else if (
-          !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.mail)
-        ) {
+
+        if (!values.name) errors.name = "Please enter your name";
+        if (!values.mail) errors.mail = "Please enter an email";
+        else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.mail))
           errors.mail = "Invalid email address";
-        }
-        if (!values.date) {
-          errors.date = "Please choose a valid date";
-        }
-        if (!values.time) {
-          errors.time = "Please choose a valid time";
-        }
-        if (!values.numberOfGuests || values.numberOfGuests < minimumNumberOfGuests || values.numberOfGuests > maximumNumberOfGuests) {
-          errors.numberOfGuests = `Please enter a number between ${minimumNumberOfGuests} and ${maximumNumberOfGuests}`;
-        }
-        if (!values.occasion) {
-          errors.occasion = "Please choose a valid occasion";
-        }
+        if (!values.date) errors.date = "Please choose a valid date";
+        if (!values.time) errors.time = "Please choose a valid time";
+        if (!values.numberOfGuests || values.numberOfGuests < minGuests || values.numberOfGuests > maxGuests)
+          errors.numberOfGuests = `Please enter a number between ${minGuests} and ${maxGuests}`;
+        if (!values.occasion) errors.occasion = "Please choose a valid occasion";
+
         return errors;
       }}
+
+      // Submission Function:  Handles form submission.
       onSubmit={(values, { setSubmitting }) => {
+        // EmailJS Configuration:  Replace with your actual EmailJS credentials
         const service_id = 'service_i3vng1m';
         const template_id = 'template_ueghurd';
         const public_id = 'gbtOYXQ6SZQAOaHko';
 
+        // Email Template Parameters:  Data to be sent in the email.
         const templateParams = {
-          from_name: "Little Lemon",
+          from_name: "Little Lemon", // Your restaurant name
           user_email: values.mail,
           to_name: values.name,
           message: `You have a reservation on ${values.date} at ${values.time} for ${values.numberOfGuests} guests.`,
         };
 
+        // Send Email:  Using EmailJS to send the reservation confirmation email.
         emailjs.send(service_id, template_id, templateParams, public_id)
           .then((response) => {
             console.log("Email sent successfully:", response);
@@ -64,11 +64,13 @@ const ReservationForm = ({ availableTimes, dispatchOnDateChange, submitData }) =
           .catch((error) => {
             console.error("Error sending email:", error);
           })
-          .finally(() => setSubmitting(false));
+          .finally(() => setSubmitting(false)); // Re-enable the submit button
 
-        submitData(values);
+
+        submitData(values); // Calls the parent component's submitData function, passing the form values.
       }}
     >
+      {/* Formik Render Props: Accessing Formik's state and methods. */}
       {({
         values,
         errors,
@@ -78,7 +80,10 @@ const ReservationForm = ({ availableTimes, dispatchOnDateChange, submitData }) =
         handleSubmit,
         isSubmitting,
       }) => (
+        // Form:  The actual HTML form.
         <form onSubmit={handleSubmit}>
+
+          {/* Name Field */}
           <FormField label="Name" htmlFor="reservation-name">
             <input
               type="text"
@@ -91,6 +96,7 @@ const ReservationForm = ({ availableTimes, dispatchOnDateChange, submitData }) =
             {errors.name && touched.name && <div className="error">{errors.name}</div>}
           </FormField>
 
+          {/* Email Field */}
           <FormField label="Email address" htmlFor="reservation-mail">
             <input
               type="email"
@@ -103,15 +109,16 @@ const ReservationForm = ({ availableTimes, dispatchOnDateChange, submitData }) =
             {errors.mail && touched.mail && <div className="error">{errors.mail}</div>}
           </FormField>
 
+          {/* Date Field */}
           <FormField label="Date" htmlFor="reservation-date">
             <input
               type="date"
               name="date"
               id="reservation-date"
-              min={minimumDate}
+              min={today}
               onChange={(e) => {
-                handleChange(e);
-                dispatchOnDateChange(e.target.value);
+                handleChange(e); // Update Formik's state for the date
+                dispatchOnDateChange(e.target.value); // Call the parent's function to update available times
               }}
               onBlur={handleBlur}
               value={values.date}
@@ -119,6 +126,7 @@ const ReservationForm = ({ availableTimes, dispatchOnDateChange, submitData }) =
             {errors.date && touched.date && <div className="error">{errors.date}</div>}
           </FormField>
 
+          {/* Time Field */}
           <FormField label="Time" htmlFor="reservation-time">
             <select
               name="time"
@@ -136,13 +144,14 @@ const ReservationForm = ({ availableTimes, dispatchOnDateChange, submitData }) =
             {errors.time && touched.time && <div className="error">{errors.time}</div>}
           </FormField>
 
+          {/* Number of Guests Field */}
           <FormField label="Number of guests" htmlFor="reservation-number-guests">
             <input
               type="number"
               name="numberOfGuests"
               id="reservation-number-guests"
-              min={minimumNumberOfGuests}
-              max={maximumNumberOfGuests}
+              min={minGuests}
+              max={maxGuests}
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.numberOfGuests}
@@ -152,6 +161,7 @@ const ReservationForm = ({ availableTimes, dispatchOnDateChange, submitData }) =
             )}
           </FormField>
 
+          {/* Occasion Field */}
           <FormField label="Occasion" htmlFor="reservation-occasion">
             <select
               name="occasion"
@@ -160,7 +170,7 @@ const ReservationForm = ({ availableTimes, dispatchOnDateChange, submitData }) =
               onBlur={handleBlur}
               value={values.occasion}
             >
-              {occasions.map((occasion) => (
+              {occasionOptions.map((occasion) => (
                 <option key={occasion} value={occasion}>
                   {occasion}
                 </option>
@@ -169,10 +179,12 @@ const ReservationForm = ({ availableTimes, dispatchOnDateChange, submitData }) =
             {errors.occasion && touched.occasion && <div className="error">{errors.occasion}</div>}
           </FormField>
 
+          {/* Submit Button */}
           <button
+            aria-label="On Click"
             className="button-primary"
             type="submit"
-            disabled={isSubmitting}
+            disabled={isSubmitting} // Disable while submitting
           >
             Reserve now!
           </button>

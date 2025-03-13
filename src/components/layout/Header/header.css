@@ -1,23 +1,20 @@
 .hover-underline-animation {
   display: inline-block;
-  padding: 10px 15px;
+  padding: 8px 15px;
   text-decoration: none;
   color: black;
   border-radius: 25px;
-  background-color: transparent; /* Default background */
+  background-color: transparent;
 }
 
 .hover-underline-animation:hover {
-  background-color: #f4ce14; /* Hover color */
+  background-color: #f4ce14;
 }
 
-/* Override hover for active link */
 .hover-underline-animation.active,
 .hover-underline-animation.active:hover {
-  background-color: #f4ce14; /* Active color */
+  background-color: #f4ce14;
 }
-
-/* Rest of your CSS remains the same */
 
 .nav-bar {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);

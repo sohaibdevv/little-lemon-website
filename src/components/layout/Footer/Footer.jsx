@@ -60,7 +60,7 @@ const Footer = ({ navLinks }) => {
         {socials.map((social, index) => (
           <a
             key={index}
-            href={`https://www.${social.name}.com`}
+            // href={`https://www.${social.name}.com`}
             target="_blank"
             rel="noreferrer"
           >
