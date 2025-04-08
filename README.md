@@ -14,4 +14,4 @@ It Offers a stylish User interface for users who want to explore the restaurant'
   - Online reservation system.
 
 ## Technologies Used
-[![My Skills](https://skillicons.dev/icons?i=html,css,js,react,figma,git)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=html,css,js,react,figma,git,netlify)](https://skillicons.dev)
