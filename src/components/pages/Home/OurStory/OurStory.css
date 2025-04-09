@@ -29,6 +29,7 @@
   border-radius: 1rem;
   object-fit: cover;
   object-position: 78% 50%;
+  box-shadow: 0 0 15px #495e57;
 }
 
 .our-story-chefs img:nth-of-type(1) {
@@ -54,7 +55,7 @@
     flex-direction: row;
     height: unset;
   }
-
+  
   .our-story-chefs img {
     position: static;
     max-width: 50%;
