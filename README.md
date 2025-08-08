@@ -1,17 +1,25 @@
-# Meta Front-End Developer Capstone Project
+<h1>Meta Front-End Developer Capstone Project</h1>
 
-# Little Lemon 🍋 🤠
+<h2>Little Lemon 🍋 🤠</h2>
 
-## Live Demo: [Here!](https://little-lemon-sohaibdevv.netlify.app/)
+<p>
+  <b>Live Demo: <a href="https://little-lemon-sohaibdevv.netlify.app/">Here!</a></b>
+</p>
 
-Welcome to the **Little Lemon Restaurant website repository.** This project demonstrates the skills and knowledge acquired during the **Meta Frontend Developer Professional Certificate Program.**
-<br/>
-It Offers a stylish User interface for users who want to explore the restaurant's menu and make reservations.
+<p>
+  <span>Welcome to the <b>Little Lemon Restaurant website repository</b>. This project demonstrates the skills and knowledge acquired during the <b>Meta Frontend Developer Professional Certificate Program.</b></span>
+  <br/>
+  <span>It offers a stylish User interface for users who want to explore the restaurant's menu and make reservations.</span>
+</p>
 
-## Features: 
-  - Responsive design for all devices.
-  - Interactive menu with detailed descriptions.
-  - Online reservation system.
+<h2>Features:</h2>
+<ul>
+  <li>Responsive design for all devices.</li>
+  <li>Interactive menu with detailed descriptions.</li>
+  <li>Online reservation system.</li>
+</ul>
 
-## Technologies Used
-[![My Skills](https://skillicons.dev/icons?i=html,css,js,react,figma,git,netlify)](https://skillicons.dev)
+<h2>Technologies Used</h2>
+<a href="https://skillicons.dev/icons?i=html,css,js,react,figma,git,netlify" rel="nofollow">
+  <img src="https://skillicons.dev/icons?i=html,css,js,react,figma,git,netlify" alt="Technologies used for Little Lemon: HTML, CSS, JavaScript, React, Figma, Git, and Netlify">
+</a>
